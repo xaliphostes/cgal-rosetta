@@ -31,8 +31,8 @@ dist/
 Thumbs.db
 
 tests/parts*
-test/remeshed_*
-test/processed_*
+tests/remeshed*
+tests/processed*
 .claude
 
 venv*
