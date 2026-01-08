@@ -1,0 +1,100 @@
+{
+    "variables": {
+        "BUILD_DIR": "build",
+        "ROSETTA_ROOT": "${BUILD_DIR}/_deps/rosetta-src",
+        "CGAL_ROOT": "${BUILD_DIR}/_deps/cgal-src"
+    },
+    "project": {
+        "name": "cgal",
+        "version": "1.0.0",
+        "description": "CGAL 3D triangulated surfaces intersection(s)",
+        "author": "xaliphostes",
+        "license": "MIT"
+    },
+    "rosetta": {
+        "registration_header": "bindings/cgal_rosetta_registration.h",
+        "registration_function": "cgal_rosetta::register_all"
+    },
+    "output_base_dir": "generated",
+    "sources": {
+        "mode": "static",
+        "base_dir": "${CGAL_ROOT}",
+        "files": [],
+        "glob_patterns": [
+            "**/*.cpp"
+        ],
+        "exclude_patterns": [
+            "**/test/**",
+            "**/*_test.cpp",
+            "**/test.cpp",
+            "**/test_*.cpp",
+            "**/examples/**",
+            "**/demo/**",
+            "**/benchmark/**",
+            "**/testfiles/**",
+            "**/support/**",
+            "**/doc/**",
+            "**/applications/**"
+        ]
+    },
+    "includes": {
+        "directories": [
+            "${ROSETTA_ROOT}/include",
+            "/opt/homebrew/include"
+        ],
+        "glob_patterns": [
+            {
+                "base_dir": "${CGAL_ROOT}",
+                "pattern": "*/include"
+            }
+        ],
+        "headers": [],
+        "library_directories": [
+            "/opt/homebrew/lib"
+        ],
+        "libraries": [
+            "gmp",
+            "mpfr"
+        ]
+    },
+    "targets": {
+        "python": {
+            "enabled": true,
+            "python_executable": "",
+            "module_name": "cgal",
+            "output_dir": "",
+            "link_mode": "static",
+            "sources": {
+                "glob_patterns": [
+                    "**/*.cpp"
+                ],
+                "exclude_patterns": [
+                    "**/test/**",
+                    "**/test_*.cpp",
+                    "**/test.cpp",
+                    "**/main.cpp",
+                    "**/examples/**",
+                    "**/demo/**",
+                    "**/benchmark/**",
+                    "**/testfiles/**",
+                    "**/support/**",
+                    "**/doc/**",
+                    "**/applications/**"
+                ]
+            }
+        },
+        "wasm": {
+            "enabled": false,
+            "module_name": "cgal_wasm",
+            "output_dir": ""
+        },
+        "javascript": {
+            "enabled": false,
+            "module_name": "cgal_js",
+            "output_dir": ""
+        }
+    },
+    "types": {
+        "namespace": "CGAL"
+    }
+}

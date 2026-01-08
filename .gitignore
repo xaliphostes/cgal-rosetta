@@ -1,0 +1,39 @@
+# Build directories
+build/
+generated/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Compiled files
+*.o
+*.a
+*.so
+*.dylib
+
+# Executables
+*_generator
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+*.whl
+
+# OS
+.DS_Store
+Thumbs.db
+
+tests/parts*
+test/remeshed_*
+test/processed_*
+.claude
+
+venv*
+.venv*
